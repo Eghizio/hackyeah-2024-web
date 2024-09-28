@@ -31,8 +31,25 @@ body[data-theme="contrast"] {
   --color-highlight-text: var(--color-secondary-bg);
 }
 
+body[data-font="normal"] {
+  --size-font: 20px;
+}
+
+body[data-font="big"] {
+  --size-font: 32px;
+}
+
+body[data-font="large"] {
+  --size-font: 48px;
+}
+
 body {
   margin: 0;
+  --transition-time: 0.7s;
+  transition: font-size var(--transition-time) ease-in-out,
+    background-color var(--transition-time) ease-in-out,
+    color var(--transition-time) ease-in-out;
+  font-size: var(--size-font);
   font-family: "Poppins", sans-serif;
   background-color: var(--color-primary-bg);
   color: var(--color-primary-text);

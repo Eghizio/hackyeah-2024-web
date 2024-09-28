@@ -7,11 +7,13 @@ import {
   useMemo,
   useState,
 } from "react";
-import { Theme } from "../types";
+import { FontSize, Theme } from "../types";
 
 interface ThemeContextValue {
   theme: Theme;
   toggleTheme: () => void;
+  fontSize: FontSize;
+  toggleFontSize: () => void;
 }
 
 const ThemeContext = createContext<ThemeContextValue | undefined>(undefined);
@@ -41,22 +43,41 @@ const toggleNextTheme = (previousTheme: Theme): Theme => {
   }
 };
 
+const toggleNextFont = (previousFont: FontSize): FontSize => {
+  console.log({ previousFont });
+  switch (previousFont) {
+    case "normal":
+      return "big";
+    case "big":
+      return "large";
+    case "large":
+      return "normal";
+    default:
+      throw new Error(`Unknown theme "${previousFont}".`);
+  }
+};
+
 // Tbh it should be just a custom hook.
 export const AppContainer = ({ children }: { children: ReactNode }) => {
   const [theme, setTheme] = useState<Theme>("light");
+  const [fontSize, setFontSize] = useState<FontSize>("normal");
 
   useEffect(() => {
     document.body.dataset["theme"] = theme;
-  }, [theme]);
+    document.body.dataset["font"] = fontSize;
+  }, [theme, fontSize]);
 
   const toggleTheme = useCallback(() => setTheme(toggleNextTheme), []);
+  const toggleFontSize = useCallback(() => setFontSize(toggleNextFont), []);
 
   const value = useMemo(
     () => ({
       theme,
       toggleTheme,
+      fontSize,
+      toggleFontSize,
     }),
-    [theme, toggleTheme]
+    [theme, toggleTheme, fontSize, toggleFontSize]
   );
 
   return (

@@ -1,14 +1,11 @@
 .top-bar {
   padding: 24px 32px;
   height: 32px;
-  background-color: var(--pc-base);
+  background-color: var(--color-secondary-bg);
+  color: var(--color-secondary-text);
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-  /* color: black; */
-  background-color: dodgerblue;
-  font-size: 14px;
 }
 
 .closeBtn {
@@ -24,13 +21,16 @@
 .nav-list {
   list-style-type: none;
   display: flex;
+  align-items: center;
   gap: 1rem;
 }
 
 .nav-item {
   cursor: pointer;
+  display: flex;
 }
 
 .nav-item:hover {
   text-decoration: underline;
+  filter: brightness(0.8);
 }
