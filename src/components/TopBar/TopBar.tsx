@@ -27,7 +27,7 @@ export const TopBar = () => {
             <FaShoppingCart size={24} />
           </li>
           <li className={s["nav-item"]}>
-            <FaUserLarge />
+            <FaUserLarge size={24} />
           </li>
         </ul>
       </nav>
