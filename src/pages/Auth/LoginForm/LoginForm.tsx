@@ -31,19 +31,6 @@ export const LoginForm = ({ navigateToRegister }: Props) => {
     <article className={`${s.layout} ${s.form}`}>
       <h1 className={s.title}>Sign in</h1>
 
-      <Button variant="secondary" wide onClick={loginWithGoogle}>
-        <div className={s.googleBtn}>
-          <img src={googleLogo} alt="Google Logo" />{" "}
-          <span>Sign in with Google</span>
-        </div>
-      </Button>
-
-      <div className={s.divider}>
-        <hr className={s.line} />
-        <span className={s.text}>or sign in with email</span>
-        <hr className={s.line} />
-      </div>
-
       <form className={s.form} onSubmit={submitLogin}>
         <input type="email" className={s.input} placeholder="Email" />
 

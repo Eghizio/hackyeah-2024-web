@@ -4,7 +4,7 @@ import s from "./Button.module.css";
 interface Props {
   children: ReactNode;
   onClick?: () => void;
-  variant: "primary" | "secondary";
+  variant?: "primary" | "secondary";
   type?: React.ButtonHTMLAttributes<HTMLButtonElement>["type"];
   wide?: boolean;
 }

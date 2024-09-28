@@ -23,33 +23,36 @@ export const Auth = () => {
   };
 
   return (
-    <main className={s.layout}>
-      <If when={authPage === "auth"}>
-        <article>
-          <div className={s.text}>
-            <p>
-              Start using CityBoost now and make your community life better.
-            </p>
-          </div>
+    <div className={s["auth-container"]}>
+      <main className={s["layout"]}>
+        <If when={authPage === "auth"}>
+          <article>
+            <div className={s["text"]}>
+              <p>
+                Start using <span className={s["highlight"]}>CityBoost</span>{" "}
+                now and make your community life better.
+              </p>
+            </div>
 
-          <div className={s.buttons}>
-            <ButtonLink variant="primary" onClick={navigateToLogin}>
-              Sign in
-            </ButtonLink>
-            <ButtonLink variant="secondary" onClick={navigateToRegister}>
-              Sign up
-            </ButtonLink>
-          </div>
-        </article>
-      </If>
+            <div className={s["buttons"]}>
+              <ButtonLink variant="primary" onClick={navigateToLogin}>
+                Sign in
+              </ButtonLink>
+              <ButtonLink variant="secondary" onClick={navigateToRegister}>
+                Sign up
+              </ButtonLink>
+            </div>
+          </article>
+        </If>
 
-      <If when={authPage === "login"}>
-        <LoginForm navigateToRegister={navigateToRegister} />
-      </If>
+        <If when={authPage === "login"}>
+          <LoginForm navigateToRegister={navigateToRegister} />
+        </If>
 
-      <If when={authPage === "register"}>
-        <RegisterForm navigateToLogin={navigateToLogin} />
-      </If>
-    </main>
+        <If when={authPage === "register"}>
+          <RegisterForm navigateToLogin={navigateToLogin} />
+        </If>
+      </main>
+    </div>
   );
 };

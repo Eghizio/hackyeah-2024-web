@@ -41,6 +41,7 @@ const toggleNextTheme = (previousTheme: Theme): Theme => {
   }
 };
 
+// Tbh it should be just a custom hook.
 export const AppContainer = ({ children }: { children: ReactNode }) => {
   const [theme, setTheme] = useState<Theme>("light");
 
