@@ -1,0 +1,36 @@
+.top-bar {
+  padding: 24px 32px;
+  height: 32px;
+  background-color: var(--pc-base);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  /* color: black; */
+  background-color: dodgerblue;
+  font-size: 14px;
+}
+
+.closeBtn {
+  cursor: pointer;
+}
+
+.closeBtn:hover {
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.nav-list {
+  list-style-type: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-item {
+  cursor: pointer;
+}
+
+.nav-item:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,38 @@
+body[data-theme="light"] {
+  --color: white;
+
+  --color-theme: rgb(255, 255, 255);
+  --color-primary-bg: rgb(248, 248, 248);
+  --color-primary-text: rgb(8, 8, 8);
+  --color-secondary-bg: rgb(34, 127, 249);
+  --color-secondary-text: rgb(255, 255, 255);
+  --color-thertiary-text: rgb(8, 8, 8);
+}
+
+body[data-theme="dark"] {
+  --color: black;
+
+  --color-theme: rgb(0, 0, 0);
+  --color-primary-bg: rgb(8, 8, 8);
+  --color-primary-text: rgb(248, 248, 248);
+  --color-secondary-bg: rgb(230, 0, 126);
+  --color-secondary-text: rgb(255, 255, 255);
+  --color-thertiary-text: rgb(8, 8, 8);
+}
+
+body[data-theme="contrast"] {
+  --color: yellow;
+
+  --color-theme: rgb(0, 0, 0);
+  --color-primary-bg: rgb(0, 0, 0);
+  --color-primary-text: rgb(255, 255, 0);
+  --color-secondary-bg: rgb(255, 0, 0);
+  --color-secondary-text: rgb(255, 255, 255);
+  --color-thertiary-text: rgb(255, 255, 255);
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-primary-bg);
+  color: var(--color-primary-text);
+}

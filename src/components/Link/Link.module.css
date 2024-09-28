@@ -1,0 +1,22 @@
+.link {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.link.primary {
+  color: var(--pc-blue);
+  font-weight: bold;
+}
+
+.link.secondary {
+  color: var(--pc-notification-text);
+  font-size: small;
+}
+
+.link:hover {
+  filter: brightness(0.8);
+}
+
+.link:active {
+  filter: brightness(0.6);
+}

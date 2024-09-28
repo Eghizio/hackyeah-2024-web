@@ -1,0 +1,25 @@
+.layout {
+  padding: 32px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+}
+
+.text {
+  color: var(--pc-notification-text);
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: small;
+}
+
+.buttons {
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
