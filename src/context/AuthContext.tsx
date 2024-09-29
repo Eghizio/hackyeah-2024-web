@@ -1,8 +1,10 @@
-import { ReactNode, createContext, useContext, useState } from "react";
+import { ReactNode, createContext, useContext } from "react";
 import { useLoginMutation } from "../api/queries/auth";
+import { useLocalStorage } from "../hooks/useLocalStorage";
 
 type User = {
-  dupa: string;
+  access_token: string;
+  refresh_token: string;
 };
 
 interface AuthContextValue {
@@ -25,10 +27,8 @@ export const useAuth = () => {
 };
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
-  const [user, setUser] = useState<User | null>(null);
+  const [user, setUser] = useLocalStorage<User | null>("hy-user", null);
   const loginMutation = useLoginMutation();
-  // const [user, setUser] = useState<User | null>(null);
-  // const [user, setUser] = useState<User | null>({ dupa: "jaja" });
 
   console.log({ user });
 
