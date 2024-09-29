@@ -1,5 +1,5 @@
 import { ReactNode, createContext, useContext } from "react";
-import { useLoginMutation } from "../api/queries/auth";
+import { useLoginMutation, useRegisterMutation } from "../api/queries/auth";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 
 type User = {
@@ -11,7 +11,13 @@ interface AuthContextValue {
   user: User | null;
   login: (email: string, password: string) => Promise<void>;
   logout: () => Promise<void>;
-  register: () => Promise<void>;
+  register: (data: {
+    email: string;
+    password: string;
+    pesel: string;
+    full_name: string;
+    district: string;
+  }) => Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextValue | undefined>(undefined);
@@ -29,12 +35,11 @@ export const useAuth = () => {
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useLocalStorage<User | null>("hy-user", null);
   const loginMutation = useLoginMutation();
+  const registerMutation = useRegisterMutation();
 
   console.log({ user });
 
-  // Todo: Add callbacks and memoization
   const login = async (email: string, password: string) => {
-    // setUser({ dupa: "jaja" });
     await loginMutation.mutateAsync({ email, password }).then(setUser);
   };
 
@@ -42,8 +47,14 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     setUser(null);
   };
 
-  const register = async () => {
-    setUser({ dupa: "jaja" });
+  const register = async (data: {
+    email: string;
+    password: string;
+    pesel: string;
+    full_name: string;
+    district: string;
+  }) => {
+    await registerMutation.mutateAsync(data).then(setUser);
   };
 
   const value = {

@@ -15,16 +15,21 @@ const login = (body: { email: string; password: string }) =>
     body: JSON.stringify(body),
   }).then((res) => res.json());
 
+const register = (body: {
+  email: string;
+  password: string;
+  pesel: string;
+  full_name: string;
+  district: string;
+}) =>
+  fetch(`${url}/register`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body),
+  }).then((res) => res.json());
+
 export const AuthApi = {
   health,
   login,
+  register,
 };
-
-// {
-//   "email": "admin@mail.com",
-//   "password": "admin",
-//   "pesel": "123456789",
-//   "full_name": "Jakub",
-//   "district": "Krakow",
-//   "role": "ADMIN"
-// }

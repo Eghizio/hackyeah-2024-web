@@ -16,5 +16,7 @@ export const useLoginMutation = () =>
     // },
   });
 
-// access_token;
-// refresh_token;
+export const useRegisterMutation = () =>
+  useMutation({
+    mutationFn: AuthApi.register,
+  });
