@@ -8,15 +8,9 @@ export const useAuthHealthQuery = () =>
   });
 
 export const useLoginMutation = () =>
-  useMutation({
-    mutationFn: AuthApi.login,
-    // onSuccess: () => {
-    //   // Invalidate and refetch
-    //   queryClient.invalidateQueries({ queryKey: ["todos"] });
-    // },
-  });
+  useMutation({ mutationFn: AuthApi.login });
 
 export const useRegisterMutation = () =>
-  useMutation({
-    mutationFn: AuthApi.register,
-  });
+  useMutation({ mutationFn: AuthApi.register });
+
+export const useMeMutation = () => useMutation({ mutationFn: AuthApi.me });

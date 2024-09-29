@@ -1,19 +1,11 @@
+import { get, post } from "./helpers";
+
 const url = "https://cityboost-auth.onrender.com";
 
-const health = () =>
-  fetch(`${url}/health`)
-    .then((res) => res.json())
-    .then((health) => {
-      console.log({ health });
-      return health;
-    });
+const health = () => get(`${url}/health`);
 
 const login = (body: { email: string; password: string }) =>
-  fetch(`${url}/login`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(body),
-  }).then((res) => res.json());
+  post(`${url}/login`, body);
 
 const register = (body: {
   email: string;
@@ -21,15 +13,13 @@ const register = (body: {
   pesel: string;
   full_name: string;
   district: string;
-}) =>
-  fetch(`${url}/register`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(body),
-  }).then((res) => res.json());
+}) => post(`${url}/register`, body);
+
+const me = (body: { access_token: string }) => post(`${url}/get_me`, body);
 
 export const AuthApi = {
   health,
   login,
   register,
+  me,
 };
