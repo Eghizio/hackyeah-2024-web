@@ -20,8 +20,9 @@ export const LoginForm = ({ navigateToRegister }: Props) => {
     event
   ) => {
     event.preventDefault();
-    // implement
-    await login();
+    // @ts-ignore
+    const { email, password } = event.target.elements;
+    await login(email.value, password.value);
     navigate("/");
   };
 
@@ -30,10 +31,20 @@ export const LoginForm = ({ navigateToRegister }: Props) => {
       <h1 className={s.title}>Sign in</h1>
 
       <form className={s.form} onSubmit={submitLogin}>
-        <input type="email" className={s.input} placeholder="Email" />
+        <input
+          type="email"
+          className={s.input}
+          name="email"
+          placeholder="Email"
+        />
 
         <div className={s.passwordRow}>
-          <input type="password" className={s.input} placeholder="Password" />
+          <input
+            type="password"
+            className={s.input}
+            name="password"
+            placeholder="Password"
+          />
           <Link variant="secondary" onClick={remindPassword}>
             Forgot password?
           </Link>

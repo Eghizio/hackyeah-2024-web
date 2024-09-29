@@ -1,4 +1,5 @@
 import { ReactNode, createContext, useContext, useState } from "react";
+import { useLoginMutation } from "../api/queries/auth";
 
 type User = {
   dupa: string;
@@ -6,7 +7,7 @@ type User = {
 
 interface AuthContextValue {
   user: User | null;
-  login: () => Promise<void>;
+  login: (email: string, password: string) => Promise<void>;
   logout: () => Promise<void>;
   register: () => Promise<void>;
 }
@@ -24,14 +25,17 @@ export const useAuth = () => {
 };
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
+  const [user, setUser] = useState<User | null>(null);
+  const loginMutation = useLoginMutation();
   // const [user, setUser] = useState<User | null>(null);
-  const [user, setUser] = useState<User | null>({ dupa: "jaja" });
+  // const [user, setUser] = useState<User | null>({ dupa: "jaja" });
 
   console.log({ user });
 
   // Todo: Add callbacks and memoization
-  const login = async () => {
-    setUser({ dupa: "jaja" });
+  const login = async (email: string, password: string) => {
+    // setUser({ dupa: "jaja" });
+    await loginMutation.mutateAsync({ email, password }).then(setUser);
   };
 
   const logout = async () => {
