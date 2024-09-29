@@ -1,3 +1,4 @@
+import { BenefitsList } from "../../components/List/BenefitsList";
 import s from "./Benefits.module.css";
 
 interface Props {}
@@ -5,7 +6,7 @@ interface Props {}
 export const Benefits = ({}: Props) => {
   return (
     <main className={s["benefits"]}>
-      <h1>Benefity</h1>
+      <BenefitsList />
     </main>
   );
 };

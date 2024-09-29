@@ -6,6 +6,8 @@ import { Home } from "../pages/Home/Home";
 import { Profile } from "../pages/Profile/Profile";
 import { Benefits } from "../pages/Benefits/Benefits";
 import { NotFound } from "../pages/NotFound/NotFound";
+import { Projects } from "../pages/Projects/Projects";
+import { ProjectDetails } from "../pages/ProjectDetails/ProjectDetails";
 
 const router = createBrowserRouter([
   {
@@ -38,6 +40,22 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <Benefits />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/projects",
+        element: (
+          <PrivateRoute>
+            <Projects />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/projects/:projectId",
+        element: (
+          <PrivateRoute>
+            <ProjectDetails />
           </PrivateRoute>
         ),
       },
