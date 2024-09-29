@@ -1,6 +1,7 @@
 import { Benefit, Project } from "../types";
 
 export const projectMock: Project = {
+  _id: `some_fake_id_${Math.random()}`,
   ID: 42,
   user_id: "user_67890",
   user_name: "Emily Brown",
