@@ -47,7 +47,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const registerMutation = useRegisterMutation();
   const meMutation = useMeMutation();
 
-  console.log({ user });
+  // console.log({ user });
 
   const login = async (email: string, password: string) => {
     const tokens = await loginMutation.mutateAsync({ email, password });
