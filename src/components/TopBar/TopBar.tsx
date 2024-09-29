@@ -1,6 +1,6 @@
 import s from "./TopBar.module.css";
 // TODO: Change to CityBoost logo. Also use for Favicon.
-import logo from "../../assets/powercharts-logo-full.svg";
+import logo from "../../assets/logo-full.svg";
 import { ImBrightnessContrast } from "react-icons/im";
 import { BiFontSize } from "react-icons/bi";
 // import { MdOutlineShoppingBag } from "react-icons/md";
