@@ -2,7 +2,7 @@ import s from "./LoginForm.module.css";
 import { Link } from "../../../components/Link/Link";
 import { Button } from "../../../components/Button/Button";
 import { useAuth } from "../../../context/AuthContext";
-import googleLogo from "../../../assets/google-logo.svg";
+import { useNavigate } from "react-router-dom";
 
 interface Props {
   navigateToRegister: () => void;
@@ -10,10 +10,7 @@ interface Props {
 
 export const LoginForm = ({ navigateToRegister }: Props) => {
   const { login } = useAuth();
-
-  const loginWithGoogle = async () => {
-    await login();
-  };
+  const navigate = useNavigate();
 
   const remindPassword = () => {
     // console.log("Remind password");
@@ -25,6 +22,7 @@ export const LoginForm = ({ navigateToRegister }: Props) => {
     event.preventDefault();
     // implement
     await login();
+    navigate("/");
   };
 
   return (

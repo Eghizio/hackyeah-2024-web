@@ -1,14 +1,15 @@
+import { Outlet } from "react-router-dom";
 import { TopBar } from "./components/TopBar/TopBar";
-import { useAuth } from "./context/AuthContext";
-import { Auth } from "./pages/Auth/Auth";
+import { AppContainer } from "./context/ThemeContext";
+import { AuthProvider } from "./context/AuthContext";
 
 export const App = () => {
-  const { user } = useAuth();
-
   return (
-    <div className="app">
-      <TopBar />
-      {user ? <>User logged in content</> : <Auth />}
-    </div>
+    <AppContainer>
+      <AuthProvider>
+        <TopBar />
+        <Outlet />
+      </AuthProvider>
+    </AppContainer>
   );
 };

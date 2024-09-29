@@ -8,12 +8,15 @@ import { FaShoppingCart } from "react-icons/fa";
 import { FaUserLarge } from "react-icons/fa6";
 
 import { useTheme } from "../../context/ThemeContext";
+import { Link } from "react-router-dom";
 
 export const TopBar = () => {
   const { toggleTheme, toggleFontSize } = useTheme();
   return (
     <header className={s["top-bar"]}>
-      <img src={logo} alt="CityBoost Logo" />
+      <Link to="/">
+        <img src={logo} alt="CityBoost Logo" />
+      </Link>
 
       <nav>
         <ul className={s["nav-list"]}>

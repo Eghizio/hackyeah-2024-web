@@ -2,18 +2,15 @@ import s from "./RegisterForm.module.css";
 import { Link } from "../../../components/Link/Link";
 import { Button } from "../../../components/Button/Button";
 import { useAuth } from "../../../context/AuthContext";
-import googleLogo from "../../../assets/google-logo.svg";
+import { useNavigate } from "react-router-dom";
 
 interface Props {
   navigateToLogin: () => void;
 }
 
 export const RegisterForm = ({ navigateToLogin }: Props) => {
-  const { login, register } = useAuth();
-
-  const loginWithGoogle = async () => {
-    await login();
-  };
+  const { register } = useAuth();
+  const navigate = useNavigate();
 
   const submitRegister: React.FormEventHandler<HTMLFormElement> = async (
     event
@@ -21,6 +18,7 @@ export const RegisterForm = ({ navigateToLogin }: Props) => {
     event.preventDefault();
     // implement
     await register();
+    navigate("/");
   };
 
   return (
