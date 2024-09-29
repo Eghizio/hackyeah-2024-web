@@ -17,7 +17,7 @@ export const ProjectsList = ({ projects }: Props) => {
             <Card
               img={photo}
               name={title}
-              displayId={ID.toString()}
+              headerRight={"#" + ID.toString()}
               description={abstract}
               category={category}
             />

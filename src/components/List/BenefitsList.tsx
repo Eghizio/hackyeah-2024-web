@@ -17,7 +17,7 @@ export const BenefitsList = ({ benefits }: Props) => {
             <Card
               img={benefit.imageUrl}
               name={benefit.name}
-              displayId={`$ ${benefit.price}`}
+              headerRight={`$ ${benefit.price}`}
               description={benefit.description}
               category={benefit.category}
             />

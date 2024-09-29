@@ -13,8 +13,8 @@ export const Home = ({}: Props) => {
     <main className={s["home"]}>
       <h2>Balance</h2>
       <WalletWidget />
-      <ProjectsList projects={arrayOf(projectMock, 10)} />
-      <BenefitsList benefits={arrayOf(benefitMock, 10)} />
+      <ProjectsList projects={arrayOf(projectMock, 5)} />
+      <BenefitsList benefits={arrayOf(benefitMock, 5)} />
     </main>
   );
 };
