@@ -3,6 +3,8 @@ import { ButtonLink } from "../../components/ButtonLink/ButtonLink";
 import s from "./Auth.module.css";
 import { LoginForm } from "./LoginForm/LoginForm";
 import { RegisterForm } from "./RegisterForm/RegisterForm";
+import { useAuth } from "../../context/AuthContext";
+import { Navigate } from "react-router-dom";
 
 // Make some proper routing FFS xD
 type AuthPage = "auth" | "login" | "register";
@@ -13,6 +15,9 @@ const If = ({ children, when }: { children: ReactNode; when: boolean }) => (
 
 export const Auth = () => {
   const [authPage, setAuthPage] = useState<AuthPage>("auth");
+  const { user } = useAuth();
+
+  if (user) return <Navigate to="/" />;
 
   const navigateToLogin = () => {
     setAuthPage("login");

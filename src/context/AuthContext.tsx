@@ -24,7 +24,10 @@ export const useAuth = () => {
 };
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
-  const [user, setUser] = useState<User | null>(null);
+  // const [user, setUser] = useState<User | null>(null);
+  const [user, setUser] = useState<User | null>({ dupa: "jaja" });
+
+  console.log({ user });
 
   // Todo: Add callbacks and memoization
   const login = async () => {

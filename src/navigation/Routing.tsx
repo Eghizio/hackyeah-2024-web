@@ -5,11 +5,13 @@ import { Auth } from "../pages/Auth/Auth";
 import { Home } from "../pages/Home/Home";
 import { Profile } from "../pages/Profile/Profile";
 import { Benefits } from "../pages/Benefits/Benefits";
+import { NotFound } from "../pages/NotFound/NotFound";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement: <NotFound />,
     children: [
       {
         path: "/",
@@ -38,6 +40,35 @@ const router = createBrowserRouter([
             <Benefits />
           </PrivateRoute>
         ),
+      },
+      {
+        path: "/wallet",
+        children: [
+          {
+            path: "/wallet/top-up",
+            element: (
+              <PrivateRoute>
+                <Profile />
+              </PrivateRoute>
+            ),
+          },
+          {
+            path: "/wallet/withdraw",
+            element: (
+              <PrivateRoute>
+                <Profile />
+              </PrivateRoute>
+            ),
+          },
+          {
+            path: "/wallet/transactions",
+            element: (
+              <PrivateRoute>
+                <Profile />
+              </PrivateRoute>
+            ),
+          },
+        ],
       },
     ],
   },

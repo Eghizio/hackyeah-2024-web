@@ -44,7 +44,6 @@ const toggleNextTheme = (previousTheme: Theme): Theme => {
 };
 
 const toggleNextFont = (previousFont: FontSize): FontSize => {
-  console.log({ previousFont });
   switch (previousFont) {
     case "normal":
       return "big";

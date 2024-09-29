@@ -4,3 +4,7 @@ export type FontSize = "normal" | "big" | "large";
 export type Order = "ascending" | "descending";
 
 export type StyleVariant = "primary" | "secondary";
+
+export type Project = {};
+
+export type Benefit = {};
