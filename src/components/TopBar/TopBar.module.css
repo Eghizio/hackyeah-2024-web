@@ -8,14 +8,15 @@
   justify-content: space-between;
 }
 
-.closeBtn {
-  cursor: pointer;
+.logo {
+  text-decoration: none;
+  color: var(--color-primary-text);
+  display: flex;
+  align-items: center;
 }
 
-.closeBtn:hover {
-  border-radius: 50%;
-  background-color: rgba(0, 0, 0, 0.3);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+.logo img {
+  width: 70px;
 }
 
 .nav-list {
@@ -30,6 +31,7 @@
 .nav-item {
   cursor: pointer;
   display: flex;
+  align-items: center;
 }
 
 .nav-item:hover {

@@ -43,7 +43,7 @@ export const RegisterForm = ({ navigateToLogin }: Props) => {
 
   return (
     <article className={`${s.layout} ${s.form}`}>
-      <h1 className={s.title}>Sign up</h1>
+      <h1 className={s.title}>Rejestracja</h1>
 
       <form className={s.form} onSubmit={submitRegister}>
         <input
@@ -51,18 +51,21 @@ export const RegisterForm = ({ navigateToLogin }: Props) => {
           className={s.input}
           name="email"
           placeholder="Email"
+          required
         />
         <input
           type="password"
           className={s.input}
           name="password"
           placeholder="Hasło"
+          required
         />
         <input
           type="password"
           className={s.input}
           name="confirmPassword"
           placeholder="Potwierdź hasło"
+          required
         />
 
         <input
@@ -70,36 +73,39 @@ export const RegisterForm = ({ navigateToLogin }: Props) => {
           className={s.input}
           name="pesel"
           placeholder="PESEL"
+          required
         />
         <input
           type="text"
           className={s.input}
           name="full_name"
           placeholder="Pełne imię"
+          required
         />
         <input
           type="text"
           className={s.input}
           name="district"
           placeholder="Miejscowość"
+          required
         />
 
         <div className={s.checkboxRow}>
-          <input type="checkbox" />
+          <input type="checkbox" required />
           <span>
-            Accept our <Link>Privacy Policy</Link> and <Link>Rules</Link>.
+            Akceptuję <Link>Politykę Prywatności</Link> oraz{" "}
+            <Link>Regulamin</Link>.
           </span>
         </div>
 
         <Button type="submit" wide>
-          Sign up
+          Zarejestruj się
         </Button>
       </form>
 
       <div>
         <p>
-          Have an account already?{" "}
-          <Link onClick={navigateToLogin}>Sign in</Link>
+          Masz już konto? <Link onClick={navigateToLogin}>Zaloguj się</Link>
         </p>
       </div>
     </article>

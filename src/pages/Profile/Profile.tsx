@@ -10,8 +10,8 @@ export const Profile = ({}: Props) => {
 
   return (
     <main className={s["profile"]}>
-      <h1>Profile</h1>
-      <Button onClick={logout}>Log out</Button>
+      <h1>Profil użytkownika</h1>
+      <Button onClick={logout}>Wyloguj się</Button>
     </main>
   );
 };

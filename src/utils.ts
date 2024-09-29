@@ -19,5 +19,5 @@ export const resolveAfter = <T>(
 
 export const useMocks = false;
 
-export const clampText = (str: string, maxLength: number = 50) =>
-  str.slice(0, maxLength) + (str.length > 50 ? "..." : "");
+export const clampText = (str: string, maxLength: number = 40) =>
+  str.slice(0, maxLength) + (str.length > maxLength ? "..." : "");

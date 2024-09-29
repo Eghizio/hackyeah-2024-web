@@ -28,7 +28,7 @@ export const LoginForm = ({ navigateToRegister }: Props) => {
 
   return (
     <article className={`${s.layout} ${s.form}`}>
-      <h1 className={s.title}>Sign in</h1>
+      <h1 className={s.title}>Logowanie</h1>
 
       <form className={s.form} onSubmit={submitLogin}>
         <input
@@ -36,6 +36,7 @@ export const LoginForm = ({ navigateToRegister }: Props) => {
           className={s.input}
           name="email"
           placeholder="Email"
+          required
         />
 
         <div className={s.passwordRow}>
@@ -43,22 +44,23 @@ export const LoginForm = ({ navigateToRegister }: Props) => {
             type="password"
             className={s.input}
             name="password"
-            placeholder="Password"
+            placeholder="Hasło"
+            required
           />
           <Link variant="secondary" onClick={remindPassword}>
-            Forgot password?
+            Zapomniałeś hasła?
           </Link>
         </div>
 
         <Button type="submit" wide>
-          Sign in
+          Zaloguj się
         </Button>
       </form>
 
       <div>
         <p>
-          Don’t have an account yet?{" "}
-          <Link onClick={navigateToRegister}>Sign up now</Link>
+          Nie masz jeszcze konta?{" "}
+          <Link onClick={navigateToRegister}>Zarejestruj się teraz</Link>
         </p>
       </div>
     </article>

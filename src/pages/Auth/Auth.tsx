@@ -34,17 +34,17 @@ export const Auth = () => {
           <article>
             <div className={s["text"]}>
               <p>
-                Start using <span className={s["highlight"]}>CityBoost</span>{" "}
-                now and make your community life better.
+                Dołącz do <span className={s["highlight"]}>CityBoost</span> i
+                spraw, aby Twoja społeczność żyła lepiej!
               </p>
             </div>
 
             <div className={s["buttons"]}>
               <ButtonLink variant="primary" onClick={navigateToLogin}>
-                Sign in
+                Zaloguj się
               </ButtonLink>
               <ButtonLink variant="secondary" onClick={navigateToRegister}>
-                Sign up
+                Zarejestruj się
               </ButtonLink>
             </div>
           </article>

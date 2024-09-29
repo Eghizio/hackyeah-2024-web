@@ -9,7 +9,7 @@ interface Props {}
 export const Home = ({}: Props) => {
   return (
     <main className={s["home"]}>
-      <h2>Balance</h2>
+      <h2>Saldo</h2>
       <WalletWidget />
       <ProjectsList />
       <BenefitsList />

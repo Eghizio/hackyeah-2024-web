@@ -1,12 +1,9 @@
 import s from "./TopBar.module.css";
-// TODO: Change to CityBoost logo. Also use for Favicon.
-import logo from "../../assets/logo-full.svg";
+import logo from "../../assets/logo.svg";
 import { ImBrightnessContrast } from "react-icons/im";
 import { BiFontSize } from "react-icons/bi";
-// import { MdOutlineShoppingBag } from "react-icons/md";
 import { FaShoppingCart } from "react-icons/fa";
 import { FaUserLarge } from "react-icons/fa6";
-
 import { useTheme } from "../../context/ThemeContext";
 import { Link, NavLink } from "react-router-dom";
 
@@ -14,8 +11,9 @@ export const TopBar = () => {
   const { toggleTheme, toggleFontSize } = useTheme();
   return (
     <header className={s["top-bar"]}>
-      <Link to="/">
-        <img src={logo} alt="CityBoost Logo" />
+      <Link to="/" className={s["logo"]}>
+        <img src={logo} alt="CityBoost Logo" color="white" />
+        CityBoost
       </Link>
 
       <nav>

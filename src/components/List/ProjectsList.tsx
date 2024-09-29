@@ -16,17 +16,19 @@ export const ProjectsList = ({}: Props) => {
       <h2>Projects</h2>
       <List>
         {projects?.length
-          ? projects.map(({ photo, title, ID, abstract, category }, i) => (
-              <List.Item key={i}>
-                <Card
-                  img={photo}
-                  name={title}
-                  headerRight={"#" + ID.toString()}
-                  description={abstract}
-                  category={category}
-                />
-              </List.Item>
-            ))
+          ? projects
+              .slice(0, 5)
+              .map(({ photo, title, ID, abstract, category }, i) => (
+                <List.Item key={i}>
+                  <Card
+                    img={photo}
+                    name={title}
+                    headerRight={"#" + ID.toString()}
+                    description={abstract}
+                    category={category}
+                  />
+                </List.Item>
+              ))
           : null}
       </List>
     </article>
