@@ -1,5 +1,7 @@
+import s from "./List.module.css";
 import { List } from "./List";
 import { Project } from "../../types";
+import { Card } from "../Card/Card";
 
 interface Props {
   projects: Project[];
@@ -7,10 +9,21 @@ interface Props {
 
 export const ProjectsList = ({ projects }: Props) => {
   return (
-    <List>
-      {projects.map((project, i) => (
-        <List.Item key={i}>ProjectCard: {JSON.stringify(project)}</List.Item>
-      ))}
-    </List>
+    <article className={s["list-wrapper"]}>
+      <h2>Projects</h2>
+      <List>
+        {projects.map(({ photo, title, ID, abstract, category }, i) => (
+          <List.Item key={i}>
+            <Card
+              img={photo}
+              name={title}
+              displayId={ID.toString()}
+              description={abstract}
+              category={category}
+            />
+          </List.Item>
+        ))}
+      </List>
+    </article>
   );
 };

@@ -1,0 +1,37 @@
+.card {
+  cursor: pointer;
+  overflow: hidden;
+  max-width: 300px;
+  border: 1px solid var(--color-secondary-bg);
+  border-radius: 8px;
+}
+
+.thumbnail {
+  width: 300px;
+}
+
+.card-body {
+  padding: 0 8px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+}
+
+.header-left {
+  font-weight: bold;
+}
+
+.header-right {
+  font-weight: bold;
+  color: var(--color-secondary-bg);
+}
+
+.footer {
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}

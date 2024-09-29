@@ -19,19 +19,19 @@ export const WalletWidget = ({}: Props) => {
       <p className={s["balance"]}>{formattedBalance}</p>
       <div className={s["buttons"]}>
         <button className={s["btn"]} onClick={() => navigate("/wallet/top-up")}>
-          <FaPlus size={48} />
+          <FaPlus size={44} />
         </button>
         <button
           className={s["btn"]}
           onClick={() => navigate("/wallet/withdraw")}
         >
-          <HiArrowsUpDown size={48} />
+          <HiArrowsUpDown size={44} />
         </button>
         <button
           className={s["btn"]}
           onClick={() => navigate("/wallet/transactions")}
         >
-          <BsList size={48} />
+          <BsList size={44} />
         </button>
       </div>
     </article>

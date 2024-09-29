@@ -1,27 +1,20 @@
 import s from "./Home.module.css";
 
-import { NavLink } from "react-router-dom";
 import { WalletWidget } from "../../components/WalletWidget/WalletWidget";
 import { ProjectsList } from "../../components/List/ProjectsList";
 import { BenefitsList } from "../../components/List/BenefitsList";
+import { benefitMock, projectMock } from "../../data/mocks";
+import { arrayOf } from "../../utils";
 
 interface Props {}
 
 export const Home = ({}: Props) => {
   return (
-    <>
-      <div>
-        <h1>Home</h1>
-        <NavLink to="/profile">Profile</NavLink>
-        <br />
-        <NavLink to="/benefits">Benefits</NavLink>
-      </div>
-
-      <main className={s["home"]}>
-        <WalletWidget />
-        <ProjectsList projects={[{}, {}, {}]} />
-        <BenefitsList benefits={[{}, {}, {}]} />
-      </main>
-    </>
+    <main className={s["home"]}>
+      <h2>Balance</h2>
+      <WalletWidget />
+      <ProjectsList projects={arrayOf(projectMock, 10)} />
+      <BenefitsList benefits={arrayOf(benefitMock, 10)} />
+    </main>
   );
 };
