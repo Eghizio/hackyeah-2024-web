@@ -8,7 +8,7 @@ import { FaShoppingCart } from "react-icons/fa";
 import { FaUserLarge } from "react-icons/fa6";
 
 import { useTheme } from "../../context/ThemeContext";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 export const TopBar = () => {
   const { toggleTheme, toggleFontSize } = useTheme();
@@ -27,10 +27,14 @@ export const TopBar = () => {
             <ImBrightnessContrast size={24} />
           </li>
           <li className={s["nav-item"]}>
-            <FaShoppingCart size={24} />
+            <NavLink to="/benefits">
+              <FaShoppingCart size={24} />
+            </NavLink>
           </li>
           <li className={s["nav-item"]}>
-            <FaUserLarge size={24} />
+            <NavLink to="/profile">
+              <FaUserLarge size={24} />
+            </NavLink>
           </li>
         </ul>
       </nav>
