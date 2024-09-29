@@ -1,3 +1,4 @@
+import { clampText } from "../../utils";
 import { Pill } from "../Pill/Pill";
 import s from "./Card.module.css";
 
@@ -26,7 +27,7 @@ export const Card = ({
             <span className={s["header-right"]}> {headerRight}</span>
           </span>
         </header>
-        <p>{description}</p>
+        <p>{clampText(description)}</p>
         <footer className={s["footer"]}>
           <Pill>{category}</Pill>
         </footer>
