@@ -1,4 +1,4 @@
-// import s from "./Profile.module.css";
+import s from "./Profile.module.css";
 
 import { Button } from "../../components/Button/Button";
 import { useAuth } from "../../context/AuthContext";
@@ -9,7 +9,7 @@ export const Profile = ({}: Props) => {
   const { logout } = useAuth();
 
   return (
-    <main>
+    <main className={s["profile"]}>
       <h1>Profile</h1>
       <Button onClick={logout}>Log out</Button>
     </main>
